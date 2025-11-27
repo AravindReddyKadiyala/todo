@@ -1,0 +1,103 @@
+/* Reset & base adjustments */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Center background and prevent page scrolling */
+.main-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;               /* full viewport */
+  background-color: wheat;
+  overflow: hidden;            /* STOP body scroll */
+}
+
+/* White container that scrolls internally */
+.todo-container {
+  width: 800px;
+  max-height: 90vh;            /* stays within screen */
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;            /* ONLY THIS BOX scrolls */
+  padding-bottom: 20px;
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  text-decoration: underline;
+  margin: 20px 0;
+}
+
+/* Input section fixed at the top of white container */
+.todo-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  background: white;           /* prevents overlap issues */
+  z-index: 100;
+  border-bottom: 1px solid #eee;
+}
+
+/* Input styling */
+.input {
+  width: 70%;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/* Task list container */
+.task-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+/* Individual task item */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.task-item-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.task-name {
+  font-size: 18px;
+  padding-left: 6%;
+}
+
+/* Completed tasks */
+.completed-task-item {
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 18px;
+  padding-left: 8%;
+}
+
+/* Section headings */
+h4 {
+  margin: 20px 0 10px 20px;
+}
