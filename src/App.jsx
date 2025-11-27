@@ -8,10 +8,17 @@ function App() {
   function handleInput(e){
     setNewTask(e.target.value)
   }
-  function addTask(){
-    setMyTasks([...myTasks,newTask])
-    setNewTask("")
+function addTask() {
+  const trimmed = newTask.trim();
+  if (trimmed !== "") {
+    setMyTasks([...myTasks, trimmed]);
+    setNewTask("");
   }
+  else{
+    alert("Please enter a valid task")
+  }
+}
+
   function taskComplete(taskname){
     setCompletedTasks([...completedTasks,taskname])
     let updatedTasks=myTasks.filter((task)=>task!==taskname)
